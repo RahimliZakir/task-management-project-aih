@@ -2,6 +2,9 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    textColor: {
+      default: "#495867",
+    },
     colors: {
       purple: "#456cd9",
     },

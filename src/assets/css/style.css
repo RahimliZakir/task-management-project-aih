@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply text-default;
+}
+
 .cont {
   @apply container px-[15px] mx-auto;
 }
