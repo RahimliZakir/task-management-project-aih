@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cont {
+  @apply container px-[15px] mx-auto;
+}
