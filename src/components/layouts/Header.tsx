@@ -4,7 +4,7 @@ const Header = () => {
       <nav className="cont shadow-default h-[64px] flex justify-end">
         <div className="flex items-center">
           <p className="font-semibold">AZ</p>
-          <div className="ms-4 bg-purple rounded-full w-[32px] h-[32px]"></div>
+          <div className="ml-4 bg-purple rounded-full w-[32px] h-[32px]"></div>
         </div>
       </nav>
     </header>

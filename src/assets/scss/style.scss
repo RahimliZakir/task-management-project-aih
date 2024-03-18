@@ -6,6 +6,18 @@ html {
   @apply text-default;
 }
 
+body {
+  @apply bg-body;
+}
+
 .cont {
   @apply container px-[calc(1.5rem*0.5)] mx-auto;
+}
+
+.cont-p-v {
+  @apply py-[calc(1.5rem*0.5)];
+}
+
+.row {
+  @apply flex flex-wrap;
 }

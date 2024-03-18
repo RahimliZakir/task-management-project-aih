@@ -1,0 +1,14 @@
+.selected-task-table {
+  tr,
+  th {
+    @apply px-4 h-[40px] text-[14px];
+  }
+
+  .selected-task-th {
+    @apply bg-selectedTaskTableHead text-left border-white border-solid border-r-[2px];
+  }
+
+  .selected-task-td {
+    @apply px-4 h-[40px] text-[14px];
+  }
+}
