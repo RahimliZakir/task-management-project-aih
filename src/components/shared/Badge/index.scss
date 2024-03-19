@@ -1,3 +1,15 @@
 .badge {
-  @apply flex items-center justify-center w-[62px] h-[22px] text-[12px] rounded-[4px] text-bagdePurple bg-badgePurple border-solid border-[2px] border-badgePurple;
+  @apply flex items-center justify-center w-[62px] h-[22px] text-[12px] rounded-[4px] border-solid border-[2px];
+}
+
+.badge-confirm {
+  @apply text-badgeConfirm bg-badgeConfirm border-badgeConfirm;
+}
+
+.badge-decision {
+  @apply text-badgeDecision bg-badgeDecision border-badgeDecision;
+}
+
+.badge-comment {
+  @apply text-badgeComment bg-badgeComment border-badgeComment;
 }

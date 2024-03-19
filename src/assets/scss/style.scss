@@ -21,3 +21,9 @@ body {
 .row {
   @apply flex flex-wrap;
 }
+
+//** Yet
+.priority {
+  @apply inline-block rounded-full w-[6px] h-[6px];
+}
+

@@ -1,0 +1,27 @@
+.urgency-circle {
+  @apply relative inline-block w-[8px] h-[8px] rounded-full;
+
+  &.in-progress {
+    @apply bg-urgencyInProgress;
+  }
+
+  &.not-started {
+    @apply bg-urgencyNotStarted;
+  }
+
+  &.executed {
+    @apply bg-urgencyExecuted;
+  }
+
+  &.delaying {
+    @apply bg-urgencyDelaying;
+  }
+
+  .inner-circle {
+    @apply inline-block w-[4px] h-[4px] rounded-full bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}
+
+.urgency-text {
+  @apply text-urgencyTitle text-[11px];
+}

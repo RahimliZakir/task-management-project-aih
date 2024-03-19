@@ -1,14 +1,14 @@
 .selected-task-table {
-  tr,
-  th {
+  // tr {
+  //   @apply even:bg-selectedTaskTableHeadAndStripe;
+  // }
+
+  .selected-task-th,
+  .selected-task-td {
     @apply px-4 h-[40px] text-[14px];
   }
 
   .selected-task-th {
-    @apply bg-selectedTaskTableHead text-left border-white border-solid border-r-[2px];
-  }
-
-  .selected-task-td {
-    @apply px-4 h-[40px] text-[14px];
+    @apply bg-selectedTaskTableHeadAndStripe text-left border-white border-solid [&:not(:last-child)]:border-r-[2px];
   }
 }

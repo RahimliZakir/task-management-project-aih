@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "status": {
+      "content": "təsdiq",
+      "type": 0
+    },
+    "source": "NK",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "yüksək",
+      "type": 0
+    }
+  },
+  {
+    "id": 2,
+    "status": {
+      "content": "təsdiq",
+      "type": 0
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "orta",
+      "type": 1
+    }
+  },
+  {
+    "id": 3,
+    "status": {
+      "content": "qərar",
+      "type": 1
+    },
+    "source": "XT",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "aşağı",
+      "type": 2
+    }
+  },
+  {
+    "id": 4,
+    "status": {
+      "content": "qərar",
+      "type": 1
+    },
+    "source": "NK",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "yüksək",
+      "type": 0
+    }
+  },
+  {
+    "id": 5,
+    "status": {
+      "content": "rəy",
+      "type": 2
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "yüksək",
+      "type": 0
+    }
+  }
+]
