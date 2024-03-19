@@ -14,10 +14,11 @@ const ListTask = () => {
     "Bütün tapşırıqlar",
   ];
   const [activeTab, setActiveTab] = useState<number>(0);
-
   const handleTabClick = (index: number) => {
     setActiveTab(index);
   };
+
+  
 
   return (
     <section id="list-task-section" className="mt-3">

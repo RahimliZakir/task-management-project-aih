@@ -2,10 +2,31 @@
   @apply flex items-center mb-2;
 
   li {
-    @apply relative [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer;
+    @apply relative [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer transition duration-500;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      @apply bg-purple;
+      height: 2px;
+      width: 0;
+      bottom: -7.5px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s;
+    }
+
+    &:hover {
+      @apply text-badgeConfirm;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
 
     &.active {
-      @apply text-badgeConfirm after:content-[''] after:absolute after:inline-block after:bg-purple after:h-[2px] after:w-[100%] after:bottom-[-7.5px] after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2;
+      @apply text-badgeConfirm after:w-[100%];
     }
   }
 }

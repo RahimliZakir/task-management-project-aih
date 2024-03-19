@@ -38,7 +38,7 @@ const SelectedTask = () => {
               return (
                 <tr
                   key={item.id}
-                  className={`border-solid border relative before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 ${
+                  className={`border-solid border border-l-0 relative before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 ${
                     item.priority.type === 0
                       ? "bg-priorityHighLight"
                       : item.priority.type === 1
