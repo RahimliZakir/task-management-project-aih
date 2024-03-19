@@ -1,7 +1,7 @@
 .selected-task-table {
-  // tr {
-  //   @apply even:bg-selectedTaskTableHeadAndStripe;
-  // }
+  tr {
+    @apply first:bg-white first:border-0 first:before:hidden;
+  }
 
   .selected-task-th,
   .selected-task-td {
