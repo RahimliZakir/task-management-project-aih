@@ -5,6 +5,7 @@ export default {
   theme: {
     textColor: {
       default: "#495867",
+      defaultHeading: "#5B656F",
       badgeConfirm: "#456CD9",
       badgeDecision: "#6EB484",
       badgeComment: "#7886AC",

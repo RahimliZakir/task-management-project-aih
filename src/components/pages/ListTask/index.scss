@@ -1,0 +1,15 @@
+.list-task-tabs {
+  @apply flex items-center mb-2;
+
+  li {
+    @apply relative [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer;
+
+    &.active {
+      @apply text-badgeConfirm after:content-[''] after:absolute after:inline-block after:bg-purple after:h-[2px] after:w-[100%] after:bottom-[-7.5px] after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2;
+    }
+  }
+}
+
+.list-task-list {
+  @apply flex items-center justify-between py-[12px] px-[20px] border border-solid border-badgeConfirm bg-badgeConfirm rounded-[6px] [&:not(:last-child)]:mb-2;
+}

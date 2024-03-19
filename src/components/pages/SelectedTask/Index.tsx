@@ -10,7 +10,9 @@ const SelectedTask = () => {
     <div className="col-span-3 bg-white shadow-default">
       <div className="cont cont-p-v">
         <div className="flex justify-between">
-          <h5 className="text-[18px] font-bold">Məsələlər</h5>
+          <h5 className="text-[18px] font-bold text-defaultHeading">
+            Məsələlər
+          </h5>
           <div className="flex items-center">
             <p className="text-[14px]">Göstər</p>
             <select

@@ -11,7 +11,11 @@ const Favourite = () => {
       className="w-[20%] mr-4 cursor-pointer"
       onClick={() => setIsFavourite(!isFavourite)}
     >
-      <img src={isFavourite ? starFilled : starBold} className="w-full" />
+      <img
+        src={isFavourite ? starFilled : starBold}
+        alt="Favourite"
+        className="w-full"
+      />
     </div>
   );
 };
