@@ -1,9 +1,16 @@
 import UrgencyList from "../../shared/UrgencyList/Index";
 import DonutChart from "../../shared/DonutChart/Index";
+import { useEffect, useRef } from "react";
 
 const ChartTask = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    console.log(ref.current?.clientHeight);
+  }, []);
+
   return (
-    <div className="col-span-1 bg-white shadow-default">
+    <div ref={ref} className="col-span-1 bg-white shadow-default">
       <div className="cont cont-p-v">
         <h5 className="text-[18px] font-bold">Məsələlər</h5>
         <div className="mt-2">

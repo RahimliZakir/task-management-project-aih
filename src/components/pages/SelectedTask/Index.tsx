@@ -88,7 +88,7 @@ const SelectedTask = () => {
         </div>
         <table
           ref={tableRef}
-          className="mt-2 selected-task-table overflow-y-auto"
+          className="mt-2 selected-task-table"
         >
           <thead>
             <tr className="bg-gray-100">
