@@ -1,15 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Badge from "../../shared/Badge/Index";
-
-import starBold from "../../../assets/svg/star-Bold.svg";
-import starFilled from "../../../assets/svg/star-Filled.svg";
-import Data from "./data.json";
+import { SelectOptionValues } from "../../../types/enums/SelectedTask";
 
 import "./index.scss";
-import { useState } from "react";
+import Data from "./data.json";
+import starBold from "../../../assets/svg/star-Bold.svg";
+import starFilled from "../../../assets/svg/star-Filled.svg";
 
 const SelectedTask = () => {
+  //* Cut the Data
+  const [data, setData] = useState(Data);
+  const [selectedOption, setSelectedOption] = useState<string>(
+    SelectOptionValues.All
+  );
+
+  useEffect(() => {
+    if (selectedOption == SelectOptionValues.All) setData(Data);
+    else setData((prevState) => prevState.slice(-10));
+  }, [selectedOption]);
+
+  //* Selected Tasks of Table
   const selectedTasksFromLocalStorage: number[] = JSON.parse(
     localStorage.getItem("selectedTasks") || "[]"
   );
@@ -40,6 +51,7 @@ const SelectedTask = () => {
     return selectedTasks.includes(id);
   };
 
+  //* Dynamic Height of Table
   const tableRef = useRef<HTMLTableElement>(null);
   useEffect(() => {
     if (tableRef.current) {
@@ -67,8 +79,10 @@ const SelectedTask = () => {
             <select
               defaultValue={"All"}
               className="ml-2 text-[14px] text-river-bed font-semibold outline-none"
+              onChange={(e) => setSelectedOption(e.target.value)}
             >
               <option value="All">Hamısı</option>
+              <option value="Last10">Son 10-u</option>
             </select>
           </div>
         </div>
@@ -86,7 +100,7 @@ const SelectedTask = () => {
           </thead>
           <tbody>
             {/* Static Data */}
-            {Data.map((item) => {
+            {data?.map((item) => {
               return (
                 <tr
                   key={item.id}
