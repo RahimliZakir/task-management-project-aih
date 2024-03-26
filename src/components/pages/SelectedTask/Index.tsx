@@ -22,7 +22,9 @@ const SelectedTask = () => {
     localStorage.setItem("selectedTasks", JSON.stringify(selectedTasks));
   }, [selectedTasks]);
 
-  const handleClick = (id: number) => {
+  const handleClick = (id: number, e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+
     setSelectedTasks((prevState) => {
       const index = prevState.indexOf(id);
 
@@ -70,7 +72,10 @@ const SelectedTask = () => {
             </select>
           </div>
         </div>
-        <table ref={tableRef} className="mt-2 selected-task-table">
+        <table
+          ref={tableRef}
+          className="mt-2 selected-task-table overflow-y-auto"
+        >
           <thead>
             <tr className="bg-gray-100">
               <th className="selected-task-th rounded-tl-[2px]">Status</th>
@@ -89,8 +94,8 @@ const SelectedTask = () => {
                 >
                   <td className="flex items-center selected-task-td font-semibold">
                     <div
-                      onClick={() => handleClick(item.id)}
-                      className="w-[18px] mr-4 cursor-pointer"
+                      onClick={(e) => handleClick(item.id, e)}
+                      className="relative z-10 w-[18px] mr-4 cursor-pointer"
                     >
                       <img
                         src={isSelected(item.id) ? starFilled : starBold}

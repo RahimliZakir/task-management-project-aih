@@ -63,5 +63,122 @@
       "content": "aşağı",
       "type": 2
     }
+  },
+  {
+    "id": 6,
+    "status": {
+      "content": "rəy",
+      "type": 2
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "aşağı",
+      "type": 2
+    }
+  },
+  {
+    "id": 7,
+    "status": {
+      "content": "rəy",
+      "type": 2
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "aşağı",
+      "type": 2
+    }
+  },
+  {
+    "id": 8,
+    "status": {
+      "content": "təsdiq",
+      "type": 0
+    },
+    "source": "XT",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "orta",
+      "type": 1
+    }
+  },
+  {
+    "id": 9,
+    "status": {
+      "content": "qərar",
+      "type": 1
+    },
+    "source": "NK",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "orta",
+      "type": 1
+    }
+  },
+  {
+    "id": 10,
+    "status": {
+      "content": "təsdiq",
+      "type": 0
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "yüksək",
+      "type": 0
+    }
+  },
+  {
+    "id": 11,
+    "status": {
+      "content": "rəy",
+      "type": 2
+    },
+    "source": "XT",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "orta",
+      "type": 1
+    }
+  },
+  {
+    "id": 12,
+    "status": {
+      "content": "qərar",
+      "type": 1
+    },
+    "source": "NK",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "yüksək",
+      "type": 0
+    }
+  },
+  {
+    "id": 13,
+    "status": {
+      "content": "rəy",
+      "type": 2
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "aşağı",
+      "type": 2
+    }
+  },
+  {
+    "id": 14,
+    "status": {
+      "content": "təsdiq",
+      "type": 0
+    },
+    "source": "PA",
+    "subject": "2020-2025-ci ilə kimi Korporativ Strategiya Performans göstəricilərinin yaxşılaşdırılması layihəsi",
+    "priority": {
+      "content": "aşağı",
+      "type": 2
+    }
   }
 ]
