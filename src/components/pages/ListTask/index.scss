@@ -2,35 +2,18 @@
   @apply flex items-center mb-2;
 
   li {
-    @apply relative [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer transition duration-500;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      @apply bg-purple;
-      height: 2px;
-      width: 0;
-      bottom: -7.5px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: 0.5s;
-    }
+    @apply relative text-river-bed [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer after:content-[''] after:absolute after:inline-block after:bg-royal-blue after:h-[2px] after:w-0 after:bottom-[-7.5px] after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:transition-[width] after:duration-500 hover:after:w-full;
 
     &:hover {
-      @apply text-badgeConfirm;
-    }
-
-    &:hover::after {
-      width: 100%;
+      @apply text-royal-blue after:w-full;
     }
 
     &.active {
-      @apply text-badgeConfirm after:w-[100%];
+      @apply text-royal-blue after:w-[100%];
     }
   }
 }
 
 .list-task-list {
-  @apply flex items-center justify-between py-[12px] px-[20px] border border-solid border-badgeConfirm bg-badgeConfirm rounded-[6px] [&:not(:last-child)]:mb-2;
+  @apply flex items-center justify-between py-[12px] px-[20px] border border-solid border-royal-blue bg-link-water rounded-[6px] [&:not(:last-child)]:mb-2;
 }

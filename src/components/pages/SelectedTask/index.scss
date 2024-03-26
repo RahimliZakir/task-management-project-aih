@@ -9,6 +9,6 @@
   }
 
   .selected-task-th {
-    @apply bg-selectedTaskTableHeadAndStripe text-left border-white border-solid [&:not(:last-child)]:border-r-[2px];
+    @apply bg-selago text-river-bed text-left border-white border-solid [&:not(:last-child)]:border-r-[2px];
   }
 }

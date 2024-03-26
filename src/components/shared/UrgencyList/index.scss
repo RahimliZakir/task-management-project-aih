@@ -2,19 +2,19 @@
   @apply relative inline-block w-[8px] h-[8px] rounded-full;
 
   &.in-progress {
-    @apply bg-urgencyInProgress;
+    @apply bg-royal-blue;
   }
 
   &.not-started {
-    @apply bg-urgencyNotStarted;
+    @apply bg-periwinkle-blue;
   }
 
   &.executed {
-    @apply bg-urgencyExecuted;
+    @apply bg-downy;
   }
 
   &.delaying {
-    @apply bg-urgencyDelaying;
+    @apply bg-light-burgundy;
   }
 
   .inner-circle {
@@ -23,5 +23,5 @@
 }
 
 .urgency-text {
-  @apply text-urgencyTitle text-[11px];
+  @apply text-slate-gray text-[11px];
 }

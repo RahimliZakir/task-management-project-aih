@@ -1,29 +1,76 @@
-import Badge from "../../shared/Badge/Index";
-import Favourite from "../../shared/Favourite/Index";
+import { useEffect, useRef } from "react";
 
+import Badge from "../../shared/Badge/Index";
+
+import starBold from "../../../assets/svg/star-Bold.svg";
+import starFilled from "../../../assets/svg/star-Filled.svg";
 import Data from "./data.json";
 
 import "./index.scss";
+import { useState } from "react";
 
 const SelectedTask = () => {
+  const selectedTasksFromLocalStorage: number[] = JSON.parse(
+    localStorage.getItem("selectedTasks") || "[]"
+  );
+
+  const [selectedTasks, setSelectedTasks] = useState<number[]>(
+    selectedTasksFromLocalStorage
+  );
+
+  useEffect(() => {
+    localStorage.setItem("selectedTasks", JSON.stringify(selectedTasks));
+  }, [selectedTasks]);
+
+  const handleClick = (id: number) => {
+    setSelectedTasks((prevState) => {
+      const index = prevState.indexOf(id);
+
+      if (index === -1) {
+        return [...prevState, id];
+      } else {
+        return [...prevState.slice(0, index), ...prevState.slice(index + 1)];
+      }
+    });
+  };
+
+  const isSelected = (id: number) => {
+    return selectedTasks.includes(id);
+  };
+
+  const tableRef = useRef<HTMLTableElement>(null);
+  useEffect(() => {
+    if (tableRef.current) {
+      const tds = Array.from(tableRef.current.querySelectorAll("td"));
+      const maxHeight = tds.reduce((maxHeight, td) => {
+        const height = td.getBoundingClientRect().height;
+        return height > maxHeight ? height : maxHeight;
+      }, 0);
+
+      tds.forEach((td) => {
+        td.style.height = `${maxHeight}px`;
+      });
+    }
+  }, []);
+
   return (
     <div className="col-span-3 bg-white shadow-default">
       <div className="cont cont-p-v">
         <div className="flex justify-between">
-          <h5 className="text-[18px] font-bold text-defaultHeading">
-            Məsələlər
-          </h5>
+          <h5 className="text-[18px] font-bold">Məsələlər</h5>
           <div className="flex items-center">
-            <p className="text-[14px]">Göstər</p>
+            <button type="button" className="text-[14px] text-river-bed">
+              Göstər
+            </button>
             <select
               defaultValue={"All"}
-              className="ml-2 text-[14px] font-semibold outline-none"
+              className="ml-2 text-[14px] text-river-bed font-semibold outline-none"
             >
               <option value="All">Hamısı</option>
             </select>
           </div>
         </div>
-        <table className="mt-2 selected-task-table">
+        <table ref={tableRef} className="mt-2 selected-task-table">
           <thead>
             <tr className="bg-gray-100">
               <th className="selected-task-th rounded-tl-[2px]">Status</th>
@@ -38,32 +85,19 @@ const SelectedTask = () => {
               return (
                 <tr
                   key={item.id}
-                  className={`border-solid border border-l-0 relative before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 ${
-                    item.priority.type === 0
-                      ? "bg-priorityHighLight"
-                      : item.priority.type === 1
-                      ? "bg-priorityMediumLight"
-                      : "bg-priorityLowLight "
-                  } 
-                  
-                  ${
-                    item.priority.type === 0
-                      ? "border-priorityHigh"
-                      : item.priority.type === 1
-                      ? "border-priorityMedium"
-                      : "border-priorityLow"
-                  }
-                  
-                  ${
-                    item.priority.type === 0
-                      ? "before:bg-priorityHighDark"
-                      : item.priority.type === 1
-                      ? "before:bg-priorityMediumDark"
-                      : "before:bg-priorityLowDark"
-                  }`}
+                  className="relative cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border after:border-solid after:border-l-0"
                 >
                   <td className="flex items-center selected-task-td font-semibold">
-                    <Favourite />
+                    <div
+                      onClick={() => handleClick(item.id)}
+                      className="w-[18px] mr-4 cursor-pointer"
+                    >
+                      <img
+                        src={isSelected(item.id) ? starFilled : starBold}
+                        alt="Favourite"
+                        className="w-full h-[18 px]"
+                      />
+                    </div>
                     <Badge
                       content={item.status.content}
                       type={item.status.type}
@@ -75,15 +109,7 @@ const SelectedTask = () => {
                   </td>
                   <td className="selected-task-td font-semibold">
                     <div className="flex items-center">
-                      <span
-                        className={`${
-                          item.priority.type === 0
-                            ? "bg-priorityHighDark"
-                            : item.priority.type === 1
-                            ? "bg-priorityMediumDark"
-                            : "bg-priorityLowDark"
-                        } priority mr-2`}
-                      ></span>
+                      <span className="priority mr-2"></span>
                       {item.priority.content}
                     </div>
                   </td>

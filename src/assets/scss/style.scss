@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 html {
-  @apply text-default;
+  @apply text-shuttle-gray;
 }
 
 body {
-  @apply bg-body;
+  @apply bg-zircon;
 }
 
 .cont {
@@ -26,4 +26,3 @@ body {
 .priority {
   @apply inline-block rounded-full w-[6px] h-[6px];
 }
-
