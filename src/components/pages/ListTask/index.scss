@@ -1,5 +1,5 @@
 .list-task-tabs {
-  @apply flex items-center mb-2;
+  @apply mb-2;
 
   li {
     @apply relative text-river-bed [&:not(:last-child)]:mr-[10px] text-[14px] font-semibold cursor-pointer after:content-[''] after:absolute after:inline-block after:bg-royal-blue after:h-[2px] after:w-0 after:bottom-[-7.5px] after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:transition-[width] after:duration-500 hover:after:w-full;
