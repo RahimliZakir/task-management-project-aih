@@ -14,13 +14,13 @@ const ListTask = () => {
   return (
     <section id="list-task-section" className="mt-3">
       <div className="bg-white shadow-default cont cont-p-v">
-        <h5 className="text-[18px] font-bold mb-2">Tapşırıq siyahısı</h5>
+        <h5 className="text-[18px] font-bold">Tapşırıq siyahısı</h5>
 
         <ul className="row list-task-tabs mb-4">
           {tabNames.map((tab: string, index: number) => (
             <li
               key={index}
-              className={isActiveToggle === index ? "active" : ""}
+              className={`${isActiveToggle === index ? "active" : ""} mt-2`}
               onClick={() => handleToggleClick(index)}
             >
               {tab}
