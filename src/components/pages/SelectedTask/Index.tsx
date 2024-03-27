@@ -68,7 +68,7 @@ const SelectedTask = () => {
   // }, []);
 
   return (
-    <div className="col-span-4 lg:col-span-3 bg-white shadow-default">
+    <div className="h-[645px] col-span-4 lg:col-span-3 bg-white shadow-default">
       <div className="cont cont-p-v">
         <div className="flex justify-between">
           <h5 className="text-[18px] font-bold">Məsələlər</h5>
@@ -104,41 +104,43 @@ const SelectedTask = () => {
             </thead>
 
             {/* Table Body */}
-            <tbody>
+            <tbody className="overflow-y-auto">
               {/* Static Data */}
-              {data?.map((item) => (
-                <tr
-                  key={item.id}
-                  className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
-                >
-                  <td className="selected-task-td w-2/12 font-semibold flex justify-center">
-                    <div
-                      onClick={(e) => handleClick(item.id, e)}
-                      className="relative z-10 w-[18px] mr-4 cursor-pointer"
-                    >
-                      <img
-                        src={isSelected(item.id) ? starFilled : starBold}
-                        alt="Favourite"
-                        className="w-full h-[18 px]"
+              <div className="h-[540px]">
+                {data?.map((item) => (
+                  <tr
+                    key={item.id}
+                    className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
+                  >
+                    <td className="selected-task-td w-2/12 font-semibold flex justify-center">
+                      <div
+                        onClick={(e) => handleClick(item.id, e)}
+                        className="relative z-10 w-[18px] mr-4 cursor-pointer"
+                      >
+                        <img
+                          src={isSelected(item.id) ? starFilled : starBold}
+                          alt="Favourite"
+                          className="w-full h-[18 px]"
+                        />
+                      </div>
+                      <Badge
+                        content={item.status.content}
+                        type={item.status.type}
                       />
-                    </div>
-                    <Badge
-                      content={item.status.content}
-                      type={item.status.type}
-                    />
-                  </td>
-                  <td className="selected-task-td w-1/12 font-bold">
-                    {item.source}
-                  </td>
-                  <td className="selected-task-td w-7/12 font-semibold">
-                    {item.subject}
-                  </td>
-                  <td className="selected-task-td w-2/12 font-semibold flex justify-center">
-                    <span className="priority mr-2"></span>
-                    {item.priority.content}
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td className="selected-task-td w-1/12 font-bold">
+                      {item.source}
+                    </td>
+                    <td className="selected-task-td w-7/12 font-semibold">
+                      {item.subject}
+                    </td>
+                    <td className="selected-task-td w-2/12 font-semibold flex justify-center">
+                      <span className="priority mr-2"></span>
+                      {item.priority.content}
+                    </td>
+                  </tr>
+                ))}
+              </div>
             </tbody>
           </table>
         </div>
