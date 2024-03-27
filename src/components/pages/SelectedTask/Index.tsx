@@ -68,7 +68,7 @@ const SelectedTask = () => {
   // }, []);
 
   return (
-    <div className="col-span-3 bg-white shadow-default">
+    <div className="col-span-4 lg:col-span-3 bg-white shadow-default">
       <div className="cont cont-p-v">
         <div className="flex justify-between">
           <h5 className="text-[18px] font-bold">Məsələlər</h5>
@@ -87,54 +87,56 @@ const SelectedTask = () => {
           </div>
         </div>
 
-        <div className="w-full mt-2 selected-task-table">
-          {/* Table Header */}
-          <div className="bg-gray-100 flex items-center">
-            <div className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
-              Status
+        <div className="overflow-auto">
+          <div className="w-[850px] md:w-full mt-2 selected-task-table">
+            {/* Table Header */}
+            <div className="bg-gray-100 flex items-center">
+              <div className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
+                Status
+              </div>
+              <div className="selected-task-th w-1/12 text-center">Mənbə</div>
+              <div className="selected-task-th w-7/12">Mövzu</div>
+              <div className="selected-task-th w-2/12 text-center rounded-tr-[2px]">
+                Prioritet
+              </div>
             </div>
-            <div className="selected-task-th w-1/12 text-center">Mənbə</div>
-            <div className="selected-task-th w-7/12">Mövzu</div>
-            <div className="selected-task-th w-2/12 text-center rounded-tr-[2px]">
-              Prioritet
-            </div>
-          </div>
-          {/* Table Body */}
-          <div>
-            {/* Static Data */}
-            {data?.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center relative cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border after:border-solid after:border-l-0"
-              >
-                <div className="selected-task-td w-2/12 font-semibold flex justify-center">
-                  <div
-                    onClick={(e) => handleClick(item.id, e)}
-                    className="relative z-10 w-[18px] mr-4 cursor-pointer"
-                  >
-                    <img
-                      src={isSelected(item.id) ? starFilled : starBold}
-                      alt="Favourite"
-                      className="w-full h-[18 px]"
+            {/* Table Body */}
+            <div>
+              {/* Static Data */}
+              {data?.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center relative cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border after:border-solid after:border-l-0"
+                >
+                  <div className="selected-task-td w-2/12 font-semibold flex justify-center">
+                    <div
+                      onClick={(e) => handleClick(item.id, e)}
+                      className="relative z-10 w-[18px] mr-4 cursor-pointer"
+                    >
+                      <img
+                        src={isSelected(item.id) ? starFilled : starBold}
+                        alt="Favourite"
+                        className="w-full h-[18 px]"
+                      />
+                    </div>
+                    <Badge
+                      content={item.status.content}
+                      type={item.status.type}
                     />
                   </div>
-                  <Badge
-                    content={item.status.content}
-                    type={item.status.type}
-                  />
+                  <div className="selected-task-td w-1/12 font-bold">
+                    {item.source}
+                  </div>
+                  <div className="selected-task-td w-7/12 font-semibold">
+                    {item.subject}
+                  </div>
+                  <div className="selected-task-td w-2/12 font-semibold flex justify-center">
+                    <span className="priority mr-2"></span>
+                    {item.priority.content}
+                  </div>
                 </div>
-                <div className="selected-task-td w-1/12 font-bold">
-                  {item.source}
-                </div>
-                <div className="selected-task-td w-7/12 font-semibold">
-                  {item.subject}
-                </div>
-                <div className="selected-task-td w-2/12 font-semibold flex justify-center">
-                  <span className="priority mr-2"></span>
-                  {item.priority.content}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

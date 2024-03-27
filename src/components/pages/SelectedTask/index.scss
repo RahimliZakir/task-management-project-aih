@@ -11,8 +11,4 @@
   .selected-task-th {
     @apply bg-selago font-bold text-river-bed border-white border-solid [&:not(:last-child)]:border-r-[2px];
   }
-
-  .selected-task-td {
-    @apply text-center;
-  }
 }

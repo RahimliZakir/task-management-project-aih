@@ -28,8 +28,8 @@ const ListTask = () => {
           ))}
         </ul>
 
-        <div className="flex items-center justify-between mb-2">
-          <div className="w-[25%]">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-2">
+          <div className="w-full md:w-[40%] lg:w-[30%] xl:w-[25%] mb-2">
             <UrgencyList />
           </div>
           <div>
@@ -71,7 +71,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-alizarin-crimson-normal"></span>
+            <span className="priority bg-ghost"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -95,7 +95,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-alizarin-crimson-normal"></span>
+            <span className="priority bg-royal-blue"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -119,7 +119,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-alizarin-crimson-normal"></span>
+            <span className="priority bg-ghost"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası

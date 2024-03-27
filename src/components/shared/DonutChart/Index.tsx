@@ -51,7 +51,7 @@ const DonutChart = ({ dataSeries, content }: DonutChartProps) => {
   return (
     <div className="flex flex-col items-center">
       <Chart options={options} series={dataSeries} type="donut" height={170} />
-      <p className="text-gull-gray text-[14px] font-semibold text-center">
+      <p className="mt-6 text-gull-gray text-[14px] font-semibold text-center">
         {content}
       </p>
     </div>

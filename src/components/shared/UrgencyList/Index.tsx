@@ -2,7 +2,7 @@ import "./index.scss";
 
 const UrgencyList = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-wrap items-center justify-between">
       <div className="flex items-center">
         <span className="urgency-circle in-progress">
           <span className="inner-circle"></span>
