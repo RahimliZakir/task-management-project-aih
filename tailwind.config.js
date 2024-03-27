@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-
-
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -33,6 +31,7 @@ export default {
         "light-burgundy": "#A03E5F",
         "link-water": "#F6F8FD",
         ghost: "#C4C5D1",
+        "gull-gray": "#94A3B8",
       },
       boxShadow: {
         default: "0px 3px 10px 1px #C7D1DC5C, 0px 1px 3px 0px #C7D1DC40",
