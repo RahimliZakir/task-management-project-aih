@@ -88,27 +88,30 @@ const SelectedTask = () => {
         </div>
 
         <div className="overflow-auto">
-          <div className="w-[850px] md:w-full mt-2 selected-task-table">
+          <table className="w-[850px] md:w-full mt-2 selected-task-table">
             {/* Table Header */}
-            <div className="bg-gray-100 flex items-center">
-              <div className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
-                Status
-              </div>
-              <div className="selected-task-th w-1/12 text-center">Mənbə</div>
-              <div className="selected-task-th w-7/12">Mövzu</div>
-              <div className="selected-task-th w-2/12 text-center rounded-tr-[2px]">
-                Prioritet
-              </div>
-            </div>
+            <thead>
+              <tr className="bg-gray-100 flex items-center">
+                <th className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
+                  Status
+                </th>
+                <th className="selected-task-th w-1/12 text-center">Mənbə</th>
+                <th className="selected-task-th w-7/12">Mövzu</th>
+                <th className="selected-task-th w-2/12 text-center rounded-tr-[2px]">
+                  Prioritet
+                </th>
+              </tr>
+            </thead>
+
             {/* Table Body */}
-            <div>
+            <tbody>
               {/* Static Data */}
               {data?.map((item) => (
-                <div
+                <tr
                   key={item.id}
                   className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
                 >
-                  <div className="selected-task-td w-2/12 font-semibold flex justify-center">
+                  <td className="selected-task-td w-2/12 font-semibold flex justify-center">
                     <div
                       onClick={(e) => handleClick(item.id, e)}
                       className="relative z-10 w-[18px] mr-4 cursor-pointer"
@@ -123,21 +126,21 @@ const SelectedTask = () => {
                       content={item.status.content}
                       type={item.status.type}
                     />
-                  </div>
-                  <div className="selected-task-td w-1/12 font-bold">
+                  </td>
+                  <td className="selected-task-td w-1/12 font-bold">
                     {item.source}
-                  </div>
-                  <div className="selected-task-td w-7/12 font-semibold">
+                  </td>
+                  <td className="selected-task-td w-7/12 font-semibold">
                     {item.subject}
-                  </div>
-                  <div className="selected-task-td w-2/12 font-semibold flex justify-center">
+                  </td>
+                  <td className="selected-task-td w-2/12 font-semibold flex justify-center">
                     <span className="priority mr-2"></span>
                     {item.priority.content}
-                  </div>
-                </div>
+                  </td>
+                </tr>
               ))}
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

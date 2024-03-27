@@ -10,6 +10,15 @@ body {
   @apply bg-zircon;
 }
 
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  @apply block;
+}
+
 .cont {
   @apply container px-[calc(1.5rem*0.5)] mx-auto;
 }
