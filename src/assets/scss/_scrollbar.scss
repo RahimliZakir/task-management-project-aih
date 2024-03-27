@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+  @apply w-[5px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ma-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-diluted-lilac rounded-[5px];
+}
+
+::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}

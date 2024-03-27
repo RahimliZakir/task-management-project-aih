@@ -9,6 +9,8 @@ export default {
         "shuttle-gray": "#5B656F",
         "river-bed": "#495867",
         selago: { normal: "#EFF4FC", 70: "#EFF4FCB2" },
+        "ma-white": "#F4F7FD",
+        "diluted-lilac": "#DAE0EC",
         "royal-blue": "#456CD9",
         "link-water": "#E3E9F9",
         "silver-tree": "#6EB484",

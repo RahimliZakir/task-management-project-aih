@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Badge from "../../shared/Badge/Index";
-import { SelectOptionValues } from "../../../types/enums/SelectedTask";
+import { useDataSlicer } from "../../../hooks/useDataSlicer";
 
 import "./index.scss";
 import Data from "./data.json";
@@ -10,15 +10,7 @@ import starFilled from "../../../assets/svg/star-Filled.svg";
 
 const SelectedTask = () => {
   //* Cut the Data
-  const [data, setData] = useState(Data);
-  const [selectedOption, setSelectedOption] = useState<string>(
-    SelectOptionValues.All
-  );
-
-  useEffect(() => {
-    if (selectedOption == SelectOptionValues.All) setData(Data);
-    else setData((prevState) => prevState.slice(-10));
-  }, [selectedOption]);
+  const { data, setSelectedOption } = useDataSlicer(Data);
 
   //* Selected Tasks of Table
   const selectedTasksFromLocalStorage: number[] = JSON.parse(
