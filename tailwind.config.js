@@ -8,7 +8,7 @@ export default {
         zircon: "#fdfeff",
         "shuttle-gray": "#5B656F",
         "river-bed": "#495867",
-        selago: "#EFF4FC",
+        selago: { normal: "#EFF4FC", 70: "#EFF4FCB2" },
         "royal-blue": "#456CD9",
         "link-water": "#E3E9F9",
         "silver-tree": "#6EB484",
