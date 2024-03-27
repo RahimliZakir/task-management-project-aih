@@ -5,10 +5,10 @@
 
   .selected-task-th,
   .selected-task-td {
-    @apply px-4 h-[40px] text-[14px];
+    @apply px-4 py-2 h-[40px] text-[14px];
   }
 
   .selected-task-th {
-    @apply bg-selago text-river-bed text-left border-white border-solid [&:not(:last-child)]:border-r-[2px];
+    @apply bg-selago text-river-bed border-white border-solid [&:not(:last-child)]:border-r-[2px];
   }
 }

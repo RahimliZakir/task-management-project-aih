@@ -86,16 +86,17 @@ const SelectedTask = () => {
             </select>
           </div>
         </div>
-        <table
-          ref={tableRef}
-          className="mt-2 selected-task-table"
-        >
+        <table ref={tableRef} className="w-full mt-2 selected-task-table">
           <thead>
             <tr className="bg-gray-100">
-              <th className="selected-task-th rounded-tl-[2px]">Status</th>
-              <th className="selected-task-th">Mənbə</th>
-              <th className="selected-task-th">Mövzu</th>
-              <th className="selected-task-th rounded-tr-[2px]">Prioritet</th>
+              <th className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
+                Status
+              </th>
+              <th className="selected-task-th w-1/12">Mənbə</th>
+              <th className="selected-task-th w-7/12">Mövzu</th>
+              <th className="selected-task-th w-2/12 rounded-tr-[2px]">
+                Prioritet
+              </th>
             </tr>
           </thead>
           <tbody>
