@@ -3,8 +3,6 @@ import { ApexOptions } from "apexcharts";
 
 import { DonutChartProps } from "../../../types/interfaces/DonutChart.type";
 
-import "./style.scss";
-
 const DonutChart = ({ dataSeries, content }: DonutChartProps) => {
   const options: ApexOptions = {
     chart: {
