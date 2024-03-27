@@ -104,7 +104,7 @@ const SelectedTask = () => {
                     key={item.id}
                     className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
                   >
-                    <td className="selected-task-td w-2/12 font-semibold flex justify-center">
+                    <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
                       <div
                         onClick={(e) => handleClick(item.id, e)}
                         className="relative z-10 w-[18px] mr-4 cursor-pointer"
