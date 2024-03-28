@@ -10,6 +10,7 @@ export default {
           normal: "#5B656F",
           50: "#5B656F80",
           70: "#5B656EB2",
+          80: "#5B656FCC",
         },
         "river-bed": "#495867",
         selago: { normal: "#EFF4FC", 70: "#EFF4FCB2" },

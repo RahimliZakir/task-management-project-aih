@@ -1,3 +1,5 @@
+import ReactSelect from "react-select";
+
 import times from "../../../assets/svg/times.svg";
 import paperclip from "../../../assets/svg/paperclip.svg";
 
@@ -23,7 +25,7 @@ const ModalTask = () => {
           </div>
         </div>
 
-        <h6 className="mb-2 text-white text-[14px] bg-royal-blue">
+        <h6 className="mb-2 relative inline-block text-white text-[14px">
           Dərkənar sahibi: <span className="font-semibold">Ad Soyad</span>
         </h6>
 
@@ -98,12 +100,51 @@ const ModalTask = () => {
 
         <form onSubmit={handleSubmit}>
           <div>
-            <select className="mb-2 w-full">
+            {/* <select className="mb-2 cont w-full h-[40px] border border-gray-300 rounded-md text-shuttle-gray-80 outline-none appearance-none">
               <option value="">Məruzə edin</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
-            </select>
+            </select> */}
+            <ReactSelect
+              className="mb-2"
+              placeholder={"Məruzə edin"}
+              options={[
+                { value: "chocolate", label: "Chocolate" },
+                { value: "strawberry", label: "Strawberry" },
+                { value: "vanilla", label: "Vanilla" },
+                { value: "chocolate", label: "Chocolate" },
+                { value: "strawberry", label: "Strawberry" },
+                { value: "vanilla", label: "Vanilla" },
+              ]}
+              styles={{
+                control: (base) => ({
+                  ...base,
+                  borderColor: "#D5DFEF",
+                  boxShadow: "none",
+                  "&:hover": {
+                    outline: "none",
+                  },
+                }),
+                menuList: (base) => ({
+                  ...base,
+                  maxHeight: "125px",
+                }),
+                option: (base) => ({
+                  ...base,
+                  color: "#5B656FCC",
+                }),
+                placeholder: (base) => ({
+                  ...base,
+                  color: "#5B656FCC",
+                }),
+                indicatorSeparator: (base) => ({
+                  ...base,
+                  display: "none",
+                }),
+              }}
+            />
+
             <textarea
               className="mb-2 cont cont-p-v h-[80px] resize-none w-full border border-solid border-gainsboro rounded-[4px] outline-none"
               rows={4}
