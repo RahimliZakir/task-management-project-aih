@@ -2,6 +2,7 @@ import Header from "./components/layouts/Header/Index";
 import ChartTask from "./components/pages/ChartTask/Index";
 import ListTask from "./components/pages/ListTask/Index";
 import SelectedTask from "./components/pages/SelectedTask/Index";
+import ModalTask from "./components/shared/ModalTask/Index";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           </div>
         </section>
         <ListTask />
+        <ModalTask />
       </main>
     </>
   );

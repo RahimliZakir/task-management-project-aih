@@ -33,8 +33,12 @@ td {
   @apply flex flex-wrap;
 }
 
+.center-non-static {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
 .priority {
-  @apply inline-block rounded-full w-[6px] h-[6px];
+  @apply inline-block rounded-full;
 }
 
 .priority-high {

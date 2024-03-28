@@ -47,7 +47,7 @@ const ListTask = () => {
 
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-alizarin-crimson-normal"></span>
+            <span className="priority w-[9px] h-[9px] bg-alizarin-crimson-normal"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -71,7 +71,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-ghost"></span>
+            <span className="priority w-[9px] h-[9px] bg-ghost"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -95,7 +95,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-royal-blue"></span>
+            <span className="priority w-[9px] h-[9px] bg-royal-blue"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -119,7 +119,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-ghost"></span>
+            <span className="priority w-[9px] h-[9px] bg-ghost"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası
@@ -143,7 +143,7 @@ const ListTask = () => {
         </div>
         <div className="list-task-list">
           <div className="flex items-center">
-            <span className="priority bg-alizarin-crimson-normal"></span>
+            <span className="priority w-[9px] h-[9px] bg-alizarin-crimson-normal"></span>
             <div className="ml-3">
               <h6 className="text-[14px] font-semibold">
                 2022‒2026-cı illər üçün inkişaf Strategiyası

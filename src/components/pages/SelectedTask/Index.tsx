@@ -128,7 +128,9 @@ const SelectedTask = () => {
                   </td>
                   <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
                     <span
-                      className={`${getPriorityType(item.priority.type)} mr-2`}
+                      className={`${getPriorityType(
+                        item.priority.type
+                      )} w-[6px] h-[6px] mr-2`}
                     ></span>
                     {item.priority.content}
                   </td>
