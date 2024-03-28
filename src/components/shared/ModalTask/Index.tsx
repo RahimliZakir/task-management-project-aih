@@ -25,7 +25,7 @@ const ModalTask = () => {
           </div>
         </div>
 
-        <h6 className="mb-2 relative inline-block text-white text-[14px">
+        <h6 className="mb-2 -ml-10 bg-royal-blue pl-10 py-1 pr-3 rounded-r-[4px] relative inline-block text-white text-[14px">
           Dərkənar sahibi: <span className="font-semibold">Ad Soyad</span>
         </h6>
 
@@ -100,12 +100,6 @@ const ModalTask = () => {
 
         <form onSubmit={handleSubmit}>
           <div>
-            {/* <select className="mb-2 cont w-full h-[40px] border border-gray-300 rounded-md text-shuttle-gray-80 outline-none appearance-none">
-              <option value="">Məruzə edin</option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </select> */}
             <ReactSelect
               className="mb-2"
               placeholder={"Məruzə edin"}
