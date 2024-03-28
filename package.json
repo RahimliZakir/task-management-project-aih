@@ -13,6 +13,7 @@
     "@mui/base": "^5.0.0-beta.39",
     "apexcharts": "^3.47.0",
     "autoprefixer": "^10.4.18",
+    "classnames": "^2.5.1",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",

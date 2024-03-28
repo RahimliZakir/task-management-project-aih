@@ -33,7 +33,18 @@ td {
   @apply flex flex-wrap;
 }
 
-//** Yet
 .priority {
   @apply inline-block rounded-full w-[6px] h-[6px];
+}
+
+.priority-high {
+  @apply bg-alizarin-crimson-normal;
+}
+
+.priority-medium {
+  @apply bg-tulip-tree;
+}
+
+.priority-low {
+  @apply bg-royal-blue;
 }

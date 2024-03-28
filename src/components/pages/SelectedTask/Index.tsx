@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { getPriorityType } from "../../../utils/priority";
 
 import Badge from "../../shared/Badge/Index";
 import { useDataSlicer } from "../../../hooks/useDataSlicer";
@@ -21,10 +22,6 @@ const SelectedTask = () => {
     selectedTasksFromLocalStorage
   );
 
-  useEffect(() => {
-    localStorage.setItem("selectedTasks", JSON.stringify(selectedTasks));
-  }, [selectedTasks]);
-
   const handleClick = (id: number, e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
 
@@ -38,6 +35,10 @@ const SelectedTask = () => {
       }
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("selectedTasks", JSON.stringify(selectedTasks));
+  }, [selectedTasks]);
 
   const isSelected = (id: number) => {
     return selectedTasks.includes(id);
@@ -79,8 +80,8 @@ const SelectedTask = () => {
           </div>
         </div>
 
-        <div className="overflow-auto">
-          <table className="w-[850px] md:w-full mt-2 selected-task-table">
+        <div className="overflow-x-auto">
+          <table className="w-[850px] overflow-x-auto md:w-full mt-2 selected-task-table">
             {/* Table Header */}
             <thead>
               <tr className="bg-gray-100 flex items-center">
@@ -96,43 +97,43 @@ const SelectedTask = () => {
             </thead>
 
             {/* Table Body */}
-            <tbody className="overflow-y-auto">
+            <tbody className="overflow-y-auto h-[540px]">
               {/* Static Data */}
-              <div className="h-[540px]">
-                {data?.map((item) => (
-                  <tr
-                    key={item.id}
-                    className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
-                  >
-                    <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
-                      <div
-                        onClick={(e) => handleClick(item.id, e)}
-                        className="relative z-10 w-[18px] mr-4 cursor-pointer"
-                      >
-                        <img
-                          src={isSelected(item.id) ? starFilled : starBold}
-                          alt="Favourite"
-                          className="w-full h-[18 px]"
-                        />
-                      </div>
-                      <Badge
-                        content={item.status.content}
-                        type={item.status.type}
+              {data?.map((item) => (
+                <tr
+                  key={item.id}
+                  className="flex items-center relative even:bg-selago-70 cursor-pointer before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0 after:[content-''] after:absolute after:top-0 after:left-0 after:bottom-0 after:right-0 after:border-0 after:border-solid after:border-l-0"
+                >
+                  <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
+                    <div
+                      onClick={(e) => handleClick(item.id, e)}
+                      className="relative z-10 w-[18px] mr-4 cursor-pointer"
+                    >
+                      <img
+                        src={isSelected(item.id) ? starFilled : starBold}
+                        alt="Favourite Star"
+                        className="w-full h-[18 px]"
                       />
-                    </td>
-                    <td className="selected-task-td w-1/12 font-bold">
-                      {item.source}
-                    </td>
-                    <td className="selected-task-td w-7/12 font-semibold">
-                      {item.subject}
-                    </td>
-                    <td className="selected-task-td w-2/12 font-semibold flex justify-center">
-                      <span className="priority mr-2"></span>
-                      {item.priority.content}
-                    </td>
-                  </tr>
-                ))}
-              </div>
+                    </div>
+                    <Badge
+                      content={item.status.content}
+                      type={item.status.type}
+                    />
+                  </td>
+                  <td className="selected-task-td w-1/12 font-bold">
+                    {item.source}
+                  </td>
+                  <td className="selected-task-td w-7/12 font-semibold">
+                    {item.subject}
+                  </td>
+                  <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
+                    <span
+                      className={`${getPriorityType(item.priority.type)} mr-2`}
+                    ></span>
+                    {item.priority.content}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

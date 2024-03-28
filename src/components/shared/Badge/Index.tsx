@@ -1,23 +1,16 @@
+import classNames from "classnames";
+
+import { BadgeTypesEnum } from "../../../types/enums/Badge.enum";
 import { BadgePropTypes } from "../../../types/interfaces/Badge.type";
 
 import "./index.scss";
 
 const Badge = ({ content, type }: BadgePropTypes) => {
-  let badgeClass = "badge";
-
-  switch (type) {
-    case 0:
-      badgeClass += " badge-confirm";
-      break;
-    case 1:
-      badgeClass += " badge-decision";
-      break;
-    case 2:
-      badgeClass += " badge-comment";
-      break;
-    default:
-      break;
-  }
+  const badgeClass = classNames("badge", {
+    "badge-confirm": type === BadgeTypesEnum.Confirm,
+    "badge-decision": type === BadgeTypesEnum.Decision,
+    "badge-comment": type === BadgeTypesEnum.Comment,
+  });
 
   return <span className={badgeClass}>{content}</span>;
 };
