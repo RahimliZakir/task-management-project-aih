@@ -1,5 +1,8 @@
-import { useToggleState } from "../../../hooks/useToggleState";
+import { useState } from "react";
+
 import UrgencyList from "../../shared/UrgencyList/Index";
+import ModalTask from "../../shared/ModalTask/Index";
+import { useToggleState } from "../../../hooks/useToggleState";
 
 import Clock from "../../../assets/svg/clock.svg";
 import Data from "./data.json";
@@ -10,6 +13,16 @@ const ListTask = () => {
   const tabNames: string[] = Data.tabnames;
 
   const [isActiveToggle, handleToggleClick] = useToggleState(1);
+
+  //* Modal
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <section id="list-task-section" className="mt-3">
@@ -45,7 +58,7 @@ const ListTask = () => {
           </div>
         </div>
 
-        <div className="list-task-list">
+        <div onClick={openModal} className="list-task-list">
           <div className="flex items-center">
             <span className="priority w-[9px] h-[9px] bg-alizarin-crimson-normal"></span>
             <div className="ml-3">
@@ -69,7 +82,7 @@ const ListTask = () => {
             </p>
           </div>
         </div>
-        <div className="list-task-list">
+        <div onClick={openModal} className="list-task-list">
           <div className="flex items-center">
             <span className="priority w-[9px] h-[9px] bg-ghost"></span>
             <div className="ml-3">
@@ -93,7 +106,7 @@ const ListTask = () => {
             </p>
           </div>
         </div>
-        <div className="list-task-list">
+        <div onClick={openModal} className="list-task-list">
           <div className="flex items-center">
             <span className="priority w-[9px] h-[9px] bg-royal-blue"></span>
             <div className="ml-3">
@@ -117,7 +130,7 @@ const ListTask = () => {
             </p>
           </div>
         </div>
-        <div className="list-task-list">
+        <div onClick={openModal} className="list-task-list">
           <div className="flex items-center">
             <span className="priority w-[9px] h-[9px] bg-ghost"></span>
             <div className="ml-3">
@@ -141,7 +154,7 @@ const ListTask = () => {
             </p>
           </div>
         </div>
-        <div className="list-task-list">
+        <div onClick={openModal} className="list-task-list">
           <div className="flex items-center">
             <span className="priority w-[9px] h-[9px] bg-alizarin-crimson-normal"></span>
             <div className="ml-3">
@@ -166,6 +179,9 @@ const ListTask = () => {
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <ModalTask isModalOpened={isModalOpen} onCloseModal={closeModal} />
+      )}
     </section>
   );
 };

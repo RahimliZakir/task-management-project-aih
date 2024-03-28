@@ -15,5 +15,5 @@
 }
 
 .list-task-list {
-  @apply flex flex-col md:flex-row items-center justify-between py-[12px] px-[20px] border border-solid border-royal-blue bg-link-water rounded-[6px] [&:not(:last-child)]:mb-2;
+  @apply flex flex-col md:flex-row items-center justify-between cursor-pointer py-[12px] px-[20px] border border-solid border-royal-blue bg-link-water rounded-[6px] [&:not(:last-child)]:mb-2;
 }
