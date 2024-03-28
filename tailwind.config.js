@@ -6,7 +6,11 @@ export default {
     extend: {
       colors: {
         zircon: "#fdfeff",
-        "shuttle-gray": "#5B656F",
+        "shuttle-gray": {
+          normal: "#5B656F",
+          50: "#5B656F80",
+          70: "#5B656EB2",
+        },
         "river-bed": "#495867",
         selago: { normal: "#EFF4FC", 70: "#EFF4FCB2" },
         "ma-white": "#F4F7FD",
@@ -34,6 +38,7 @@ export default {
         "link-water": "#F6F8FD",
         ghost: "#C4C5D1",
         "gull-gray": "#94A3B8",
+        gainsboro: "#D5DFEF",
       },
       boxShadow: {
         default: "0px 3px 10px 1px #C7D1DC5C, 0px 1px 3px 0px #C7D1DC40",
