@@ -35,12 +35,11 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
 
   //* React Select
   const reactSelectOptions = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "submit", label: "Məruzə edin" },
+    { value: "report", label: "Hesabat verin" },
+    { value: "talk", label: "Mənimlə danışın" },
+    { value: "info", label: "Əlavə məlumat" },
+    { value: "read", label: "Oxudum" },
   ];
 
   const reactSelectStyles = {

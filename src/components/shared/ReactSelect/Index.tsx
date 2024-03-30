@@ -1,15 +1,12 @@
 import Select from "react-select";
 import { Props as SelectProps } from "react-select";
 
-interface ReactSelectProps extends SelectProps {
-  options: { value: string; label: string }[];
-}
-
-const ReactSelect = ({ options, ...props }: ReactSelectProps) => {
+const ReactSelect = ({ options, styles, ...props }: SelectProps) => {
   return (
     <Select
       options={options}
       styles={{
+        ...styles,
         control: (base) => ({
           ...base,
           borderColor: "#D5DFEF",
