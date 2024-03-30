@@ -6,7 +6,6 @@ import { useToggleState } from "../../../hooks/useToggleState";
 
 import Clock from "../../../assets/svg/clock.svg";
 import Data from "./data.json";
-
 import "./index.scss";
 
 const ListTask = () => {

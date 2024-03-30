@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { getPriorityType } from "../../../utils/priority";
 
 import Badge from "../../shared/Badge/Index";
 import ModalTask from "../../shared/ModalTask/Index";
 import { useDataSlicer } from "../../../hooks/useDataSlicer";
+import { getPriorityType } from "../../../utils/priority";
 
-import "./index.scss";
-import Data from "./data.json";
 import starBold from "../../../assets/svg/star-Bold.svg";
 import starFilled from "../../../assets/svg/star-Filled.svg";
+import Data from "./data.json";
+import "./index.scss";
 
 const SelectedTask = () => {
   //* Cut the Data
@@ -96,12 +96,12 @@ const SelectedTask = () => {
             {/* Table Header */}
             <thead>
               <tr className="bg-gray-100 flex items-center">
-                <th className="selected-task-th w-2/12 text-center rounded-tl-[2px]">
+                <th className="selected-task-th w-2/12 rounded-tl-[2px]">
                   Status
                 </th>
-                <th className="selected-task-th w-1/12 text-center">Mənbə</th>
+                <th className="selected-task-th w-1/12">Mənbə</th>
                 <th className="selected-task-th w-7/12">Mövzu</th>
-                <th className="selected-task-th w-2/12 text-center rounded-tr-[2px]">
+                <th className="selected-task-th w-2/12 rounded-tr-[2px]">
                   Prioritet
                 </th>
               </tr>
@@ -139,12 +139,14 @@ const SelectedTask = () => {
                     {item.subject}
                   </td>
                   <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
-                    <span
-                      className={`${getPriorityType(
-                        item.priority.type
-                      )} w-[6px] h-[6px] mr-2`}
-                    ></span>
-                    {item.priority.content}
+                    <div className="w-1/2">
+                      <span
+                        className={`${getPriorityType(
+                          item.priority.type
+                        )} w-[6px] h-[6px] mr-2`}
+                      ></span>
+                      {item.priority.content}
+                    </div>
                   </td>
                 </tr>
               ))}

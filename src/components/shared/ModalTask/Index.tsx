@@ -1,12 +1,14 @@
 import { useRef, useEffect } from "react";
-import ReactSelect from "react-select";
+import { CSSObjectWithLabel } from "react-select";
 
+import ReactSelect from "../ReactSelect/Index";
 import { ModalTaskProps } from "../../../types/interfaces/ModalTask";
 
 import times from "../../../assets/svg/times.svg";
 import paperclip from "../../../assets/svg/paperclip.svg";
 
 const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
+  //* Modal
   const modalRef = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
@@ -29,6 +31,31 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
 
   const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  };
+
+  //* React Select
+  const reactSelectOptions = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
+
+  const reactSelectStyles = {
+    menuList: (base: CSSObjectWithLabel) => ({
+      ...base,
+      maxHeight: "125px",
+    }),
+    option: (base: CSSObjectWithLabel) => ({
+      ...base,
+      color: "#5B656FCC",
+    }),
+    placeholder: (base: CSSObjectWithLabel) => ({
+      ...base,
+      color: "#5B656FCC",
+    }),
   };
 
   return (
@@ -130,40 +157,8 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
               <ReactSelect
                 className="mb-2"
                 placeholder={"Məruzə edin"}
-                options={[
-                  { value: "chocolate", label: "Chocolate" },
-                  { value: "strawberry", label: "Strawberry" },
-                  { value: "vanilla", label: "Vanilla" },
-                  { value: "chocolate", label: "Chocolate" },
-                  { value: "strawberry", label: "Strawberry" },
-                  { value: "vanilla", label: "Vanilla" },
-                ]}
-                styles={{
-                  control: (base) => ({
-                    ...base,
-                    borderColor: "#D5DFEF",
-                    boxShadow: "none",
-                    "&:hover": {
-                      outline: "none",
-                    },
-                  }),
-                  menuList: (base) => ({
-                    ...base,
-                    maxHeight: "125px",
-                  }),
-                  option: (base) => ({
-                    ...base,
-                    color: "#5B656FCC",
-                  }),
-                  placeholder: (base) => ({
-                    ...base,
-                    color: "#5B656FCC",
-                  }),
-                  indicatorSeparator: (base) => ({
-                    ...base,
-                    display: "none",
-                  }),
-                }}
+                options={reactSelectOptions}
+                styles={reactSelectStyles}
               />
 
               <textarea
