@@ -12,10 +12,10 @@ export const getPriorityType = (priorityType: number) => {
 
 // export const getPriorityBorder = (priorityType: number) => {
 //   const priorityClass = classNames({
-//     "before:bg-alizarin-crimson-normal after:border-alizarin-crimson-normal":
+//     "before:bg-alizarin-crimson-normal border-alizarin-crimson-normal":
 //       priorityType === 0,
-//     "before:bg-tulip-tree after:border-tulip-tree": priorityType === 1,
-//     "before:bg-royal-blue after:border-royal-blue": priorityType === 2,
+//     "before:bg-tulip-tree border-tulip-tree": priorityType === 1,
+//     "before:bg-royal-blue border-royal-blue": priorityType === 2,
 //   });
 
 //   return priorityClass;
