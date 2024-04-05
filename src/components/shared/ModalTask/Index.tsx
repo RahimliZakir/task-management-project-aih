@@ -62,8 +62,11 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
       onClick={handleOverlayClick}
       className="fixed z-40 left-0 top-0 right-0 bottom-0 bg-black bg-opacity-50"
     >
-      <div ref={modalRef} className="fixed z-50 center-non-static w-[1000px]">
-        <div className="p-10 bg-white rounded-[4px]">
+      <div
+        ref={modalRef}
+        className="fixed z-50 center-non-static w-[1000px] rounded-[4px] overflow-hidden"
+      >
+        <div className="p-10 bg-white h-[90vh] overflow-y-auto">
           <div className="mb-2 flex items-start">
             <div className="w-11/12">
               <h2 className="font-bold text-[20px]">

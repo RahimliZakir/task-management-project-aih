@@ -6,7 +6,6 @@ const ReactSelect = ({ options, styles, ...props }: SelectProps) => {
     <Select
       options={options}
       styles={{
-        ...styles,
         control: (base) => ({
           ...base,
           borderColor: "#D5DFEF",
@@ -19,6 +18,7 @@ const ReactSelect = ({ options, styles, ...props }: SelectProps) => {
           ...base,
           display: "none",
         }),
+        ...styles,
       }}
       {...props}
     />
