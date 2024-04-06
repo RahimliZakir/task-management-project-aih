@@ -114,7 +114,7 @@ const SelectedTask = () => {
                 <tr
                   key={item.id}
                   onClick={openModal}
-                  className="flex items-center relative even:bg-selago-70 cursor-pointer border border-solid border-l-0 before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0"
+                  className="flex items-center relative even:bg-selago-70 cursor-pointer border-l-0 before:content-[''] before:absolute before:inline-block before:w-[13px] before:left-0 before:top-0 before:bottom-0"
                 >
                   <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
                     <div
@@ -124,7 +124,7 @@ const SelectedTask = () => {
                       <img
                         src={isSelected(item.id) ? starFilled : starBold}
                         alt="Favourite Star"
-                        className="w-full h-[18 px]"
+                        className="w-full h-[18px]"
                       />
                     </div>
                     <Badge

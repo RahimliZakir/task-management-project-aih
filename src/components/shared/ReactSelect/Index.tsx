@@ -8,11 +8,7 @@ const ReactSelect = ({ options, styles, ...props }: SelectProps) => {
       styles={{
         control: (base) => ({
           ...base,
-          borderColor: "#D5DFEF",
           boxShadow: "none",
-          "&:hover": {
-            outline: "none",
-          },
         }),
         indicatorSeparator: (base) => ({
           ...base,

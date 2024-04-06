@@ -43,6 +43,10 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
   ];
 
   const reactSelectStyles = {
+    control: (base: CSSObjectWithLabel) => ({
+      ...base,
+      borderColor: "#D5DFEF",
+    }),
     menuList: (base: CSSObjectWithLabel) => ({
       ...base,
       maxHeight: "125px",
