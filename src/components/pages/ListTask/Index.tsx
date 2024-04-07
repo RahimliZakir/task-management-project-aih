@@ -1,8 +1,7 @@
-import { useState } from "react";
-
 import UrgencyList from "../../shared/UrgencyList/Index";
 import ModalTask from "../../shared/ModalTask/Index";
 import { useToggleState } from "../../../hooks/useToggleState";
+import { useHandleModal } from "../../../hooks/useHandleModal";
 
 import Clock from "../../../assets/svg/clock.svg";
 import Data from "./data.json";
@@ -14,14 +13,7 @@ const ListTask = () => {
   const [isActiveToggle, handleToggleClick] = useToggleState(1);
 
   //* Modal
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const { isModalOpen, openModal, closeModal } = useHandleModal(false);
 
   return (
     <section id="list-task-section" className="mt-3">

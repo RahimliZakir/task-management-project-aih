@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Badge from "../../shared/Badge/Index";
 import ModalTask from "../../shared/ModalTask/Index";
 import { useDataSlicer } from "../../../hooks/useDataSlicer";
+import { useHandleModal } from "../../../hooks/useHandleModal";
 import { getPriorityType } from "../../../utils/priority";
 
 import starBold from "../../../assets/svg/star-Bold.svg";
@@ -48,14 +49,7 @@ const SelectedTask = () => {
   //* Fix Width Of Priorities
 
   //* Modal
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const { isModalOpen, openModal, closeModal } = useHandleModal(true);
 
   //* Dynamic Height of Table
   // const tableRef = useRef<HTMLTableElement>(null);
