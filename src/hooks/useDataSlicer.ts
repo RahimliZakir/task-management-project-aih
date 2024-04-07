@@ -8,10 +8,10 @@ export const useDataSlicer = (Data: any[]) => {
     SelectOptionValues.All
   );
 
-  useEffect(() => {
+  const handleDataSlicer = () => {
     if (selectedOption == SelectOptionValues.All) setData(Data);
     else setData((prevState: any[]) => prevState.slice(-10));
-  }, [selectedOption]);
+  };
 
-  return { data, setSelectedOption };
+  return { data, handleDataSlicer, setSelectedOption };
 };

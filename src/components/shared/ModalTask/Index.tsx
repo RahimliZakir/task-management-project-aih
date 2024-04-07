@@ -8,6 +8,16 @@ import times from "../../../assets/svg/times.svg";
 import paperclip from "../../../assets/svg/paperclip.svg";
 
 const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
+  const modalHeading = useRef<HTMLHeadingElement>(null!);
+
+  useEffect(() => {
+    console.log(
+      window
+        .getComputedStyle(modalHeading.current)
+        .getPropertyValue("font-size")
+    );
+  }, []);
+
   //* Modal
   const modalRef = useRef<HTMLDivElement>(null!);
 
@@ -43,8 +53,7 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
   ];
 
   const reactSelectStyles = {
-    control: (base: CSSObjectWithLabel) => ({
-      ...base,
+    control: () => ({
       borderColor: "#D5DFEF",
     }),
     menuList: (base: CSSObjectWithLabel) => ({
@@ -71,9 +80,12 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
         className="fixed z-50 center-non-static w-[1000px] rounded-[4px] overflow-hidden"
       >
         <div className="p-10 bg-white h-[90vh] overflow-y-auto">
-          <div className="mb-2 flex items-start">
+          <div className="mb-2 flex">
             <div className="w-11/12">
-              <h2 className="font-bold text-[20px]">
+              <h2
+                ref={modalHeading}
+                className="font-bold text-[20px] leading-[24px]"
+              >
                 2020-2025-ci ilə kimi Korporativ Strategiya Performans
                 göstəricilərinin yaxşılaşdırılması layihəsi
               </h2>

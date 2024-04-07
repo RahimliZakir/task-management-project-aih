@@ -1,6 +1,7 @@
 import ReactSelect from "../../shared/ReactSelect/Index";
 
 import logo from "../../../assets/imgs/logo.png";
+import { CSSObjectWithLabel } from "react-select";
 
 const Header = () => {
   const reactSelectOptions = [
@@ -14,7 +15,8 @@ const Header = () => {
       border: "none",
       fontWeight: "600",
     }),
-    dropdownIndicator: () => ({
+    dropdownIndicator: (base: CSSObjectWithLabel) => ({
+      ...base,
       display: "none",
     }),
   };
@@ -36,6 +38,7 @@ const Header = () => {
                 options={reactSelectOptions}
                 styles={reactSelectStyles}
                 isSearchable={false}
+                className="cursor-pointer"
               />
               <div className="ml-4 bg-royal-blue rounded-full w-[32px] h-[32px]"></div>
             </div>

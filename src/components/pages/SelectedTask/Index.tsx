@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Badge from "../../shared/Badge/Index";
 import ModalTask from "../../shared/ModalTask/Index";
@@ -12,7 +12,7 @@ import "./index.scss";
 
 const SelectedTask = () => {
   //* Cut the Data
-  const { data, setSelectedOption } = useDataSlicer(Data);
+  const { data, handleDataSlicer, setSelectedOption } = useDataSlicer(Data);
 
   //* Selected Tasks of Table
   const selectedTasksFromLocalStorage: number[] = JSON.parse(
@@ -44,6 +44,8 @@ const SelectedTask = () => {
   const isSelected = (id: number) => {
     return selectedTasks.includes(id);
   };
+
+  //* Fix Width Of Priorities
 
   //* Modal
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -77,7 +79,11 @@ const SelectedTask = () => {
         <div className="flex justify-between">
           <h5 className="text-[18px] font-bold">Məsələlər</h5>
           <div className="flex items-center">
-            <button type="button" className="text-[14px] text-river-bed">
+            <button
+              onClick={handleDataSlicer}
+              type="button"
+              className="text-[14px] text-river-bed"
+            >
               Göstər
             </button>
             <select
@@ -92,7 +98,7 @@ const SelectedTask = () => {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-[850px] overflow-x-auto md:w-full mt-2 selected-task-table">
+          <table className="w-[800px] md:w-full mt-2 selected-task-table">
             {/* Table Header */}
             <thead>
               <tr className="bg-gray-100 flex items-center">
@@ -138,8 +144,8 @@ const SelectedTask = () => {
                   <td className="selected-task-td w-7/12 font-semibold">
                     {item.subject}
                   </td>
-                  <td className="selected-task-td w-2/12 font-semibold flex items-center justify-center">
-                    <div className="w-1/2">
+                  <td className="selected-task-td w-2/12 font-semibold">
+                    <div className="flex items-center">
                       <span
                         className={`${getPriorityType(
                           item.priority.type

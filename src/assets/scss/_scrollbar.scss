@@ -1,5 +1,6 @@
 ::-webkit-scrollbar {
-  @apply w-[5px];
+  @apply w-[5px] h-[5px];
+  //*Width is for the "vertical" and height is for the "horizontal" scrollbar.
 }
 
 ::-webkit-scrollbar-track {
