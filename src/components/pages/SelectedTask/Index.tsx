@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 import Badge from "../../shared/Badge/Index";
 import ModalTask from "../../shared/ModalTask/Index";
