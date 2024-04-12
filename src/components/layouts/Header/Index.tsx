@@ -1,7 +1,8 @@
+import { CSSObjectWithLabel } from "react-select";
+
 import ReactSelect from "../../shared/ReactSelect/Index";
 
 import logo from "../../../assets/imgs/logo.png";
-import { CSSObjectWithLabel } from "react-select";
 
 const Header = () => {
   const reactSelectOptions = [
