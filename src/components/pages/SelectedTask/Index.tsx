@@ -135,12 +135,12 @@ const SelectedTask = () => {
                   <td className="selected-task-td w-7/12 font-semibold">
                     {item.subject}
                   </td>
-                  <td className="selected-task-td w-2/12 font-semibold">
-                    <div className="flex items-center">
+                  <td className="selected-task-td w-2/12 font-semibold flex justify-center">
+                    <div className="flex items-center w-[58px]">
                       <span
                         className={`${getPriorityType(
                           item.priority.type
-                        )} w-[6px] h-[6px] mr-2`}
+                        )} inline-block w-[6px] h-[6px] mr-2`}
                       ></span>
                       {item.priority.content}
                     </div>
