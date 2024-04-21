@@ -30,11 +30,8 @@ const SelectedTask = () => {
     setSelectedTasks((prevState) => {
       const index = prevState.indexOf(id);
 
-      if (index === -1) {
-        return [...prevState, id];
-      } else {
-        return [...prevState.slice(0, index), ...prevState.slice(index + 1)];
-      }
+      if (index === -1) return [...prevState, id];
+      else return [...prevState.slice(0, index), ...prevState.slice(index + 1)];
     });
   };
 
@@ -49,7 +46,7 @@ const SelectedTask = () => {
   //* Fix Width Of Priorities
 
   //* Modal
-  const { isModalOpen, openModal, closeModal } = useHandleModal(true);
+  const { isModalOpen, openModal, closeModal } = useHandleModal(false);
 
   //* Dynamic Height of Table
   // const tableRef = useRef<HTMLTableElement>(null);

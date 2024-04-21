@@ -84,7 +84,7 @@ const ModalTask = ({ isModalOpened, onCloseModal }: ModalTaskProps) => {
         className="fixed z-50 center-non-static w-[1000px] rounded-[4px] overflow-hidden"
       >
         <div className="p-10 bg-white h-[90vh] overflow-y-auto">
-          <div className="mb-2 flex">
+          <div className="mb-2 flex items-baseline">
             <div className="w-11/12">
               <h2
                 ref={modalHeading}
