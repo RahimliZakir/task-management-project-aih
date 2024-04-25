@@ -3,7 +3,7 @@ import { ApexOptions } from "apexcharts";
 
 import { DonutChartProps } from "../../../types/interfaces/DonutChart.type";
 
-const DonutChart = ({ dataSeries, content }: DonutChartProps) => {
+const DonutChart = ({ dataSeries, content, colors }: DonutChartProps) => {
   const options: ApexOptions = {
     chart: {
       type: "donut",
@@ -18,9 +18,9 @@ const DonutChart = ({ dataSeries, content }: DonutChartProps) => {
       enabled: true,
       fillSeriesColor: true,
     },
-    colors: ["#456CD8", "#839BE5", "#6ACEBC", "#A03E5F"],
+    colors: colors,
     fill: {
-      colors: ["#456CD8", "#839BE5", "#6ACEBC", "#A03E5F"],
+      colors: colors,
     },
     dataLabels: {
       enabled: false,
@@ -38,7 +38,7 @@ const DonutChart = ({ dataSeries, content }: DonutChartProps) => {
               label: "",
             },
             value: {
-              offsetY: -12,
+              offsetY: -10,
               fontSize: "14px",
               fontWeight: "600",
             },

@@ -36,7 +36,6 @@ export default {
         "periwinkle-blue": "#839BE5",
         downy: "#6ACEBC",
         "light-burgundy": "#A03E5F",
-        "link-water": "#F6F8FD",
         ghost: "#C4C5D1",
         "gull-gray": "#94A3B8",
         gainsboro: "#D5DFEF",
